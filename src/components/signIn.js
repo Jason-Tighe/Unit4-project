@@ -73,13 +73,13 @@ const SignIn = props => {
 						/>
 					</div>
 
-					<input type="submit" className="btn signIn-btn" value="LOGIN" />
+					<input type="submit" className="btn btn-primary" value="LOGIN" />
 				</form>
 
 				<br />
 				<h4 className="signIn-card-title p-2">Don't have an account?</h4>
 				<Link to="/register">
-					<button type="button" className="btn reg-btn">
+					<button type="button" className="btn btn-primary">
 						REGISTER
 					</button>
 				</Link>
