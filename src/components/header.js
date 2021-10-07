@@ -36,7 +36,7 @@ const Header = props => {
 						<p className="p-1">
 							Hello {window.localStorage.getItem('loggedInUser')}
 						</p>
-						<button className="btn btn-primary" onClick={handleLogout}>
+						<button className="btn btn-light" onClick={handleLogout}>
 							Logout
 						</button>
 						<MapModal />

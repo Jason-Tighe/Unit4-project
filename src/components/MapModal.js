@@ -35,7 +35,7 @@ export default function MapModal() {
 
 	return (
 		<>
-			<button className="m-1 btn btn-primary" onClick={openModal}>
+			<button className="m-1 btn btn-light" onClick={openModal}>
 				Nearby Facility
 			</button>
 			<Modal

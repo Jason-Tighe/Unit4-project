@@ -4,7 +4,7 @@ export default function Button(props) {
 	return (
 		<>
 			<button
-				className="m-1 btn btn-light"
+				className="m-1 btn btn-dark"
 				id={props.id}
 				type={props.type}
 				value={props.value}
