@@ -40,49 +40,76 @@ const SignIn = props => {
 		history.push('/');
 	};
 
+	const bgStyle = {
+		backgroundColor: 'teal'
+	};
+	const bgStyle1 = {
+		backgroundColor: 'orange'
+	};
+
 	return (
-		<div className="global-container card-body">
-			<div className="card signIn-form text-center col-lg-6 col-md-6 col-sm-6 col-xl-4">
-				<h2 className="center-text reg-card-title">Sign in to your account</h2>
-				<form onSubmit={handleLogin}>
-					<div className="input-container center-text">
-						<i className="fa fa-user icon"></i>
-						<input
-							className="input-field center-text"
-							id="email"
-							type="text"
-							placeholder="User Email"
-							name="email"
-							value={signin.email}
-							onChange={handleChange}
-							required
-						/>
+		<div className="d-flex p-5 justify-content-center">
+			<div className="card container signIn-form d-flex p-5 justify-content-center">
+				<form onSubmit={handleLogin} className="row">
+					<div className="row p-2 justify-content-center">
+						<h2 className="text-center col-md-5 reg-card-title">
+							Sign in to your account
+						</h2>
 					</div>
 
-					<div className="input-container">
-						<i className="fa fa-key icon"></i>
-						<input
-							className="input-field"
-							id="password"
-							type="password"
-							placeholder="Password"
-							name="password"
-							value={signin.password}
-							onChange={handleChange}
-							required
-						/>
-					</div>
+					<div className="container">
+						<div className="row  p-2 justify-content-center">
+							<div className="col-md-auto">
+								<i className="fa fa-user icon"></i>
+								<input
+									className="p-1  input-field"
+									id="email"
+									type="text"
+									placeholder="User Email"
+									name="email"
+									value={signin.email}
+									onChange={handleChange}
+									required
+								/>
+							</div>
+						</div>
 
-					<input type="submit" className="btn btn-primary" value="LOGIN" />
+						<div className="row  p-2 justify-content-center">
+							<div className="col-md-auto">
+								<i className="fa fa-key icon"></i>
+
+								<input
+									className="p-1 input-field"
+									id="password"
+									type="password"
+									placeholder="Password"
+									name="password"
+									value={signin.password}
+									onChange={handleChange}
+									required
+								/>
+							</div>
+						</div>
+
+						<div className="row justify-content-center no-gutters">
+							<div className="p-1 col-md-auto">
+								<button
+									type="submit"
+									className="btn btn-dark btn-lg"
+									value="LOGIN"
+								>
+									Log In
+								</button>
+							</div>
+
+							<Link to="/register" className="p-1 col-md-auto">
+								<button type="button" className="btn btn-dark btn-lg">
+									REGISTER
+								</button>
+							</Link>
+						</div>
+					</div>
 				</form>
-
-				<br />
-				<h4 className="signIn-card-title p-2">Don't have an account?</h4>
-				<Link to="/register">
-					<button type="button" className="btn btn-primary">
-						REGISTER
-					</button>
-				</Link>
 			</div>
 		</div>
 	);

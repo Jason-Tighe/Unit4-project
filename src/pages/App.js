@@ -19,8 +19,12 @@ export default function App(props) {
 				</>
 			) : (
 				<>
-					<LogSymptoms userId={userId} token={token} />
-					<DataTable userState={userState} />
+					<div className="jumbotron">
+						<DataTable userState={userState} />
+					</div>
+					<div>
+						<LogSymptoms userId={userId} token={token} />
+					</div>
 				</>
 			)}
 		</div>

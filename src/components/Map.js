@@ -9,8 +9,8 @@ import {
 
 //this needs to be outside or else it wont render...
 const containerStyle = {
-	width: '800px',
-	height: '800px'
+	width: '100%',
+	height: '100%'
 };
 
 let coords = [];
@@ -88,7 +88,7 @@ export default function Map(props) {
 				<GoogleMap
 					mapContainerStyle={containerStyle}
 					center={currentPosition}
-					zoom={13}
+					zoom={11}
 					onLoad={onMapLoad}
 					onUnmount={onUnmount}
 				>

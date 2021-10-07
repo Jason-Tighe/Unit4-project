@@ -4,6 +4,7 @@ export default function Exposure(props) {
 	return (
 		<>
 			<textarea
+				className="form-control"
 				type="text"
 				placeholder={props.placeholder}
 				name={props.name}

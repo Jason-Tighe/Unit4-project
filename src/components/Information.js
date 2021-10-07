@@ -106,16 +106,15 @@ export default function DataTable(props) {
 
 	return (
 		<>
-			<h2>COVID Data</h2>
-			<div>
+			<h2>State Data</h2>
+
+			<table className="table table-bordered">
 				<StateDropDown
+					text="See How Your State Is Doing"
 					onChange={handleChangeLocation}
 					array={statesArray}
 					value={location}
 				/>
-			</div>
-
-			<table>
 				<tbody>
 					<tr>
 						<th>Risk Level</th>
@@ -170,6 +169,12 @@ export default function DataTable(props) {
 						</td>
 					</tr>
 				</tbody>
+				<thead className="thead-dark">
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
 			</table>
 		</>
 	);

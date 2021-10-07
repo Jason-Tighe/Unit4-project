@@ -6,6 +6,7 @@ import CheckBoxForm from './LogSym/Symptoms/CheckBoxForm';
 import LogHead from './LogSym/LogHead';
 import Button from './LogSym/Button';
 import Map from './Map';
+import MapModal from './MapModal';
 import symptomOptions from './LogSym/Symptoms/symptomOptions';
 import {
 	BrowserRouter as Router,
@@ -92,25 +93,27 @@ export default function LogSympmtoms(props) {
 	//Should i be doing something similar with the radio buttons? They were annoying due to value being different for them. I could do an array again to map over, the only thing that binds radio buttons is the name so as long as the name is fine it should be fine? Maybe that's easier? Unsure.
 	const symptomForm = symptomOptions.map((symptom, index) => {
 		return (
-			<div key={index}>
+			<>
 				<CheckBoxForm
+					key={index}
 					label={symptom.symptom}
 					id={symptom.name}
 					name={symptom.name}
 					onChange={handleCheckChange}
 				/>
-			</div>
+			</>
 		);
 	});
 
 	return (
 		<div>
 			{!showCard && (
-				<form onSubmit={handleSubmit} className="LogSympmtoms">
+				<form onSubmit={handleSubmit} className="container">
 					{/*LogHead was just the header no real reason to have a componet tbh.*/}
 					<LogHead text={'Log Symptoms'} />
 					{/*This is maping over the symptoms array, to create the checkboxes and then you see the radio button compnet asking if it's severe*/}
 					<Symptoms checkList={symptomForm} />
+					<br />
 					<YesNo
 						text={'Are you experincing any life threatening symptoms?'}
 						name={'lifeThreatening'}
@@ -163,13 +166,6 @@ export default function LogSympmtoms(props) {
 					{/*Buttons 1 to submit the data, another to to clear it. Second button is prob unneeded */}
 					<Button id={'submit-btn'} type={'submit'} value={'Submit'} />
 					<Button id={'reset-btn'} type={'reset'} value={'Clear'} />
-					<Button
-						id={'contact'}
-						type={'button'}
-						value={'Contact Doctor'}
-						onClick={handleFindHelp}
-					/>
-					{findHelp ? <Map /> : <></>}
 				</form>
 			)}
 			{showCard && (

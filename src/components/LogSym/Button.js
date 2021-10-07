@@ -4,7 +4,7 @@ export default function Button(props) {
 	return (
 		<>
 			<button
-				className="btn signIn-btn"
+				className="m-1 btn btn-light"
 				id={props.id}
 				type={props.type}
 				value={props.value}
