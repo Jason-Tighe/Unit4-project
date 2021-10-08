@@ -138,6 +138,7 @@ const RegisterInformation = props => {
 		}
 		history.push('/');
 	};
+
 	const containerStyle = {
 		width: '40vw'
 	};
@@ -162,6 +163,7 @@ const RegisterInformation = props => {
 				<form
 					onSubmit={handleSubmit}
 					className="row justify-content-center"
+					id="registerForm"
 					style={bgStyle1}
 				>
 					<div className="col-md-auto">
@@ -310,6 +312,7 @@ const RegisterInformation = props => {
 							<input
 								className="input-field"
 								id="doctorPhone"
+								name="doctorPhone"
 								type="number"
 								placeholder="Physician Phone Number"
 								value={doctor.doctorPhone}
@@ -334,6 +337,7 @@ const RegisterInformation = props => {
 							<input
 								className="input-field"
 								id="facilityName"
+								name="facilityName"
 								type="text"
 								placeholder="Facility Name"
 								value={doctor.facilityName}
@@ -346,6 +350,7 @@ const RegisterInformation = props => {
 							<input
 								className="input-field"
 								id="facilityLocation"
+								name="facilityLocation"
 								type="text"
 								placeholder="Facility Location"
 								value={doctor.facilityLocation}
@@ -358,6 +363,7 @@ const RegisterInformation = props => {
 							<input
 								className="input-field"
 								id="facilityNumber"
+								name="facilityNumber"
 								type="text"
 								placeholder="Facility Phone Number"
 								value={doctor.facilityNumber}
@@ -367,11 +373,14 @@ const RegisterInformation = props => {
 					</div>
 				</form>
 				<div className="row justify-content-center" style={bgStyle}>
-					<input
+					<button
 						type="submit"
 						className="p-2 m-3 btn-lg btn btn-light"
 						value="SUBMIT"
-					/>
+						form="registerForm"
+					>
+						SUBMIT
+					</button>
 				</div>
 			</div>
 		</>
